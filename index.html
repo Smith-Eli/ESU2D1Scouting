@@ -5,66 +5,105 @@
 <html>
 
 <head>
-  
+
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  
+
   <title>4152 Scouting App</title>
-  
-  <link href="style.css" rel="stylesheet" type="text/css"/>
+
+  <script src="qrcode.min.js"></script>
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
-  
-  <div id="homeScreen">
 
-    <header class="w3-container w3-indigo">
-    <h1>4152 Scouting App</h1></header>
+  <div id="titleBar">
+
+    <titleBar>
+
+      <header class="w3-container w3-indigo">
+
+        <h1>4152 Scouting App</h1>
+
+      </header>
+
+    </titleBar>
+
+  </div>
+
+  <div id="bodyPage">
+
+    <bodyPage>
 
       <p>
+
         <label for="frmScout">Scout Initials</label>
-        <input type="text" class = "w3-input" id="frmScout" name="frmScout" placeholder="Enter Scout Initials">
+
+        <input type="text" class="w3-input" id="frmScout" name="frmScout" placeholder="Enter Scout Initials">
+
       </p>
 
       <p>
-        <label for="frmTeams">Team Number</label>
+
+        <label for="frmTeams">Team Number </label>
+
         <select class="w3-select" id="frmTeams" name="frmTeams">
+
           <option value="" disabled selected>Select Team</option>
+
           <option value="610">610</option>
-          <option value="771">771</option>  
+
+          <option value="771">771</option>
+
           <option value="865">865</option>
+
           <option value="1114">1114</option>
+
         </select>
+
       </p>
 
       <p>
+
         <label for="frmMatch">Match Number</label>
+
         <select class="w3-select" id="frmMatch" name="frmMatch">
-        <script>
-          var disable = '<option value=""' + " disabled selected>Select Match</option>";
-          var x="", i;
-          for (i = 1; i <= 68; i++) {
-            x = x + "<option value=Q" + i + ">Q" + i + "</option>"
-          }
-          document.getElementById("frmMatch").innerHTML = disable + x;
-        </script>
+
+          <script>
+
+            var disable = '<option value=""' + " disabled selected>Select Match</option>";
+
+            var x = "", i;
+
+            for (i = 1; i <= 68; i++) {
+              x = x + "<option value=Q" + i + ">Q" + i + "</option>"
+            }
+
+            document.getElementById("frmMatch").innerHTML = disable + x;
+
+          </script>
+
         </select>
+
       </p>
 
       <p>
+
         <button onclick="startScouting();" id="btnStart" class="w3-button w3-indigo">Start Scouting</button>
+
       </p>
 
   </div>
-  
+
   <div id="qrcode"></div>
 
   <script src="script.js"></script>
-    
+
 </body>
 
 </html>

@@ -1,27 +1,34 @@
 let scout = "";
+
 let team = "";
+
 let match = "";
-const matchData = {scout:"", team:"", match:""};
 
-function startScouting(){
+const matchData = { scout: "", team: "", match: "" };
 
-    scout = document.getElementById("frmScout").value;
-    
-    let teamform = document.getElementById("frmTeams");
-    team = teamform.options[teamform.selectedIndex].value;
+function startScouting() {
 
-    let matchform = document.getElementById("frmMatch");
-    match = matchform.options[matchform.selectedIndex].value;
-    
-    matchData.scout = scout;
-    matchData.team = team;
-    matchData.match = match;
+  scout = document.getElementById("frmScout").value;
 
-    let full = JSON.stringify(matchData);
+  let teamform = document.getElementById("frmTeams");
 
-    alert("Making QR Code: " + full);
+  team = teamform.options[teamform.selectedIndex].value;
 
-    new QrCode(document,getElementById("qrcode"), full);
+  let matchform = document.getElementById("frmMatch");
+
+  match = matchform.options[matchform.selectedIndex].value;
+
+  matchData.scout = scout;
+
+  matchData.team = team;
+
+  matchData.match = match;
+
+  let full = JSON.stringify(matchData);
+
+  alert("Making QR Code: " + full);
+
+  new QRCode(document.getElementById("qrcode"), full);
 
 }
 
